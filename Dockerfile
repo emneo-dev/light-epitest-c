@@ -20,7 +20,8 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
   ca-certificates \
   xz-utils \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* \
+  && rm -rf /usr/share/doc/*
 
 RUN cd /tmp \
   && curl -sSL "https://github.com/Snaipe/Criterion/releases/download/v2.4.2/criterion-2.4.2-linux-x86_64.tar.xz" -o /tmp/criterion.tar.xz \
